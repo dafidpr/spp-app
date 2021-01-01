@@ -139,7 +139,7 @@
 
 <script type="text/javascript" src="<?php echo base_url() . 'assets/plugins/disabler-enabler/disabler.js'; ?>"></script>
 <script type="text/javascript" src="<?php echo base_url() . 'assets/plugins/disabler-enabler/enabler.js'; ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url() . 'assets/plugins/bootstrap-daterangepicker/daterangepicker.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo base_url() . 'assets/plugins/bootstrap-daterangepicker/daterangepicker.js'; ?>"></script>
 <script type="text/javascript">
 		// Date picker
 	if ($('input.single-daterange').length) {

@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="content-box">
-					<form id="form-action">
+					<form id="form-action" method="post">
 						<div class="form-group">
 							<label for=""> Company Name</label>
 							<input class="form-control" name="company_name" placeholder="Company Name" type="text" value="<?php echo $settings[0]->meta_value; ?>">

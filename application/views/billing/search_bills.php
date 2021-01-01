@@ -66,7 +66,7 @@
     {field: 'name', title: 'Name', editable: true, sortable: false, width: 200, align: 'left', search: true},
     {field: 'total_price_formatted', title: 'Amount', sortable: false, width: 200, align: 'left', search: true, 
         rowStyler: function(rowData, rowIndex) {
-            return '<span class="badge badge-grey">' + rowData.amount + '</span>';
+            return '<span class="badge badge-grey">Rp. ' + new Intl.NumberFormat('in-IN', { maximumSignificantDigits: 3 }).format(rowData.amount) + '</span>';
           }
       },
     {field: 'status', title: 'Status', editable: true, sortable: false, width: 200, align: 'left', search: true},

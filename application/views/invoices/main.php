@@ -67,7 +67,7 @@
 	    {field: 'total_price_formatted', title: 'Jumlah', sortable: false, width: 150, align: 'right', search: true, 
 	  		rowStyler: function(rowData, rowIndex) {
 
-      			return '<span class="badge badge-grey">' + rowData.amount + '</span>';
+      			return '<span class="badge badge-grey">Rp. ' +  new Intl.NumberFormat('in-IN', { maximumSignificantDigits: 3 }).format(rowData.amount) + '</span>';
 	        }
 	    },
 	    {field: 'menu', title: 'Menu', sortable: false, width: 300, align: 'center', search: false, 
@@ -90,7 +90,7 @@
 					{field: 'bills_name', title: 'Name', editable: true, sortable: false, width: 200, align: 'left', search: true},
 	        		{field: 'price_formatted', title: 'Amount', sortable: false, width: 200, align: 'left', search: false, 
 	        			rowStyler: function(rowData, rowIndex) {
-	        				return '<span class="badge badge-grey">' + rowData.bills_amount + '</span>';
+	        				return '<span class="badge badge-grey">Rp. ' + new Intl.NumberFormat('in-IN', { maximumSignificantDigits: 3 }).format(rowData.bills_amount) + '</span>';
 	       				}
 	      			}
 				]

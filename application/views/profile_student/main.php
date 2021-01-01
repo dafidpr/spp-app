@@ -21,9 +21,8 @@
 						<div class="form-group">
 							<label for=""> Jenis Kelamin</label>
 							<select name="gender" class="form-control">
-									<option value="L" <?php echo "L" == $students->gender ? 'selected' : ''; ?>>Laki-Laki</option>
-									<option value="P" <?php echo "P" == $students->gender ? 'selected' : ''; ?>>Perempuan</option>
-
+								<option value="L" <?php echo "L" == $students->gender ? 'selected' : ''; ?>>Laki-Laki</option>
+								<option value="P" <?php echo "P" == $students->gender ? 'selected' : ''; ?>>Perempuan</option>
 							</select>					
 							<div class="validation-message" data-field="gender"></div>
 						</div>
@@ -34,7 +33,7 @@
 						</div>
 						<div class="form-group">
 							<label for=""> Tanggal Lahir</label>
-							<input class="single-daterange form-control" name="birthdate" placeholder="Tanggal Lahir" type="text" value="<?=date('d-m-Y',strtotime($students->birthdate))?>">
+							<input class="single-daterange form-control" name="birthdate" placeholder="Tanggal Lahir" type="text" value="<?=date('d-m-Y', strtotime($students->birthdate))?>">
 							<div class="validation-message" data-field="birthdate"></div>
 						</div>
 						<div class="form-group">
@@ -67,55 +66,55 @@
 		$('#form-action').disable([".action"]);
 		$("button[title='save']").html("Validating data, please wait...");
 		$.ajax({
-url: "<?php echo base_url() . 'profile_student/validate'; ?>", async: false, type: 'POST', data: formData,
-success: function(data, textStatus, jqXHR) {
-returnData = data;
-}
-});
-$('#form-action').enable([".action"]);
-$("button[title='save']").html("Save changes");
-if (returnData != 'success') {
-$('#form-action').enable([".action"]);
-$("button[title='save']").html("Save changes");
-$('.validation-message').html('');
-$('.validation-message').each(function() {
-for (var key in returnData) {
-if ($(this).attr('data-field') == key) {
-$(this).html(returnData[key]);
-}
-}
-});
-} else {
-return 'success';
-}
+			url: "<?php echo base_url() . 'profile_student/validate'; ?>", async: false, type: 'POST', data: formData,
+			success: function(data, textStatus, jqXHR) {
+				returnData = data;
+				}
+			});
+			$('#form-action').enable([".action"]);
+			$("button[title='save']").html("Save changes");
+			if (returnData != 'success') {
+				$('#form-action').enable([".action"]);
+				$("button[title='save']").html("Save changes");
+				$('.validation-message').html('');
+				$('.validation-message').each(function() {
+				for (var key in returnData) {
+				if ($(this).attr('data-field') == key) {
+				$(this).html(returnData[key]);
+			}
+		}
+	});
+	} else {
+	return 'success';
+	}
 }
 function save() {
-var formData = $('#form-action').serialize();
-if (validate(formData) == 'success') {
-swal({
-title: "Please check your data",
-text: "Saved data can not be restored",
-type: "warning",
-showCancelButton: true,
-confirmButtonColor: "#DD6B55",
-cancelButtonText: "Cancel",
-confirmButtonText: "Save",
-closeOnConfirm: true
-}, function() {
-$('.validation-message').html('');
-$("button[title='save']").html("Saving data, please wait...");
-$.post("<?php echo base_url() . 'profile_student/save'; ?>", formData).done(function(data) {
-swal({
-title: "Success",
-text: "Your profile successfully saved",
-type: "success"
-})
-$('#form-action').enable([".action"]);
-$("button[title='save']").html("Save");
-$('.user-group').html($('[name="group_id"]').find('option:selected').html())
-});
-});
-}
+	var formData = $('#form-action').serialize();
+	if (validate(formData) == 'success') {
+		swal({
+			title: "Please check your data",
+			text: "Saved data can not be restored",
+			type: "warning",
+			showCancelButton: true,
+			confirmButtonColor: "#DD6B55",
+			cancelButtonText: "Cancel",
+			confirmButtonText: "Save",
+			closeOnConfirm: true
+			}, function() {
+				$('.validation-message').html('');
+				$("button[title='save']").html("Saving data, please wait...");
+				$.post("<?php echo base_url() . 'profile_student/save'; ?>", formData).done(function(data) {
+				swal({
+					title: "Success",
+					text: "Your profile successfully saved",
+					type: "success"
+				})
+				$('#form-action').enable([".action"]);
+				$("button[title='save']").html("Save");
+				$('.user-group').html($('[name="group_id"]').find('option:selected').html())
+			});
+		});
+	}
 }
 </script>
 

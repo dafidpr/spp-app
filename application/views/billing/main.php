@@ -1,4 +1,4 @@
-    <link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/select2/dist/css/select2.min.css'; ?>"/>
+<link rel="stylesheet" href="<?php echo base_url() . 'assets/plugins/select2/dist/css/select2.min.css'; ?>"/>
 <div class="content">
 	<div class="panel">
 		<div class="content-header no-mg-top">
@@ -148,9 +148,5 @@ cache: true
 
 
 <script type="text/javascript" src="<?php echo base_url() . 'assets/plugins/jquery/jquery-2.1.1.min.js'; ?>"></script>
-
-
-
-
-        <script type="text/javascript" src="<?php echo base_url() . 'assets/plugins/slimscroll/jquery.slimscroll.min.js'; ?>"></script>
+<script type="text/javascript" src="<?php echo base_url() . 'assets/plugins/slimscroll/jquery.slimscroll.min.js'; ?>"></script>
 
